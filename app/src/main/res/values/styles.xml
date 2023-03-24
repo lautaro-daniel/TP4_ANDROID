@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="tittle" >
+        <item name="android:textColor" >@color/black</item>
+        <item name="android:background" >@color/purple_500</item>
+        <item name="android:paddingTop" >@dimen/padding_top_tittle</item>
+        <item name="android:paddingBottom" >@dimen/padding_top_tittle</item>
+    </style>
+
+    <style name="show_counter">
+        <item name="android:layout_margin" > 0dp</item>
+        <item name="android:textSize" > 90sp</item>
+    </style>
+</resources>

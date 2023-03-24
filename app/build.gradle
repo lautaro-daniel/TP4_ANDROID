@@ -7,6 +7,10 @@ android {
     namespace 'com.example.pil_mobile_basics'
     compileSdk 33
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId "com.example.pil_mobile_basics"
         minSdk 24

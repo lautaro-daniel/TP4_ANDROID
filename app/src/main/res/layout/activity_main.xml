@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.MainCounter">
 
     <TextView
         android:id="@+id/tittle"
@@ -33,35 +33,47 @@
         style="@style/counter_value"
         />
 
+    <EditText
+        android:id="@+id/number_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/counter_value"
+        app:layout_constraintBottom_toTopOf="@id/reset_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Type a number"
+        android:inputType="number"
+        />
+
     <Button
-        android:id="@+id/first_button"
+        android:id="@+id/decrement_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/counter_value"
-        app:layout_constraintEnd_toStartOf="@id/second_button"
+        app:layout_constraintEnd_toStartOf="@id/reset_button"
         style="@style/button"
         android:text="@string/decrement_button"
         />
 
     <Button
-        android:id="@+id/second_button"
+        android:id="@+id/reset_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/first_button"
+        app:layout_constraintStart_toEndOf="@id/decrement_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/counter_value"
-        app:layout_constraintEnd_toStartOf="@id/third_button"
+        app:layout_constraintEnd_toStartOf="@id/increase_button"
         style="@style/button"
         android:text="@string/reset_button"
         />
 
     <Button
-        android:id="@+id/third_button"
+        android:id="@+id/increase_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/second_button"
+        app:layout_constraintStart_toEndOf="@id/reset_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/counter_value"
         app:layout_constraintEnd_toEndOf="parent"

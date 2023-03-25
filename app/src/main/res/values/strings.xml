@@ -5,4 +5,5 @@
     <string name="decrement_button">DECREMENT</string>
     <string name="reset_button">RESET</string>
     <string name="increase_button">INCREASE</string>
+    <string name="empty_error">It must not be empty</string>
 </resources>

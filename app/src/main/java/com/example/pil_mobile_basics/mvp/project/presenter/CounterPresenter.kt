@@ -11,13 +11,21 @@ class CounterPresenter(private val model : CounterContract.Model, private val vi
 
 
     override fun onIncreaseButtonPressed(){
-        model.increaseCount()
-        view.setCount(model.getCount())
+        if (view.validateInput()){
+            view.showError()
+        }else{
+            model.increaseCount(view.getInput())
+            view.setCount(model.getCount())
+        }
     }
 
     override fun onDecrementButtonPressed(){
-        model.decrementCount()
-        view.setCount(model.getCount())
+        if (view.validateInput()){
+            view.showError()
+        }else{
+            model.decrementCount(view.getInput())
+            view.setCount(model.getCount())
+        }
     }
 
     override fun onResetButtonPressed(){
@@ -25,4 +33,6 @@ class CounterPresenter(private val model : CounterContract.Model, private val vi
         view.setCount(model.getCount())
 
     }
+
+
 }

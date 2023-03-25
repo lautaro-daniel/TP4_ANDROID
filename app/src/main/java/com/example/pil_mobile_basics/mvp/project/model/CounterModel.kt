@@ -11,12 +11,12 @@ class CounterModel():CounterContract.Model {
         return count.toString()
     }
 
-    override fun increaseCount() {
-        count++
+    override fun increaseCount(value:Int) {
+        count += value
     }
 
-    override fun decrementCount() {
-        count--
+    override fun decrementCount(value:Int) {
+        count -= value
     }
 
     override fun resetCount() {

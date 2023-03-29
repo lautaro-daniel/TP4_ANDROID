@@ -1,6 +1,7 @@
 package com.example.pil_mobile_basics.mvp.project.presenter
 
 import com.example.pil_mobile_basics.mvp.project.contract.CounterContract
+import com.example.pil_mobile_basics.mvp.project.model.CounterModel
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
@@ -14,8 +15,7 @@ class CounterPresenterTest {
     @MockK
     private lateinit var counterView: CounterContract.View
 
-    @MockK
-    private lateinit var counterModel: CounterContract.Model
+    private var counterModel = CounterModel()
 
     @Before
     fun onBefore(){

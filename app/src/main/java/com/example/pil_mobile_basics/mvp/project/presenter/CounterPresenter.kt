@@ -15,7 +15,7 @@ class CounterPresenter(private val model : CounterContract.Model, private val vi
             view.showError()
         }else{
             model.increaseCount(view.getInput())
-            view.setCount(model.getCount())
+            view.setCount(model.Count())
         }
     }
 
@@ -24,13 +24,13 @@ class CounterPresenter(private val model : CounterContract.Model, private val vi
             view.showError()
         }else{
             model.decrementCount(view.getInput())
-            view.setCount(model.getCount())
+            view.setCount(model.Count())
         }
     }
 
     override fun onResetButtonPressed(){
         model.resetCount()
-        view.setCount(model.getCount())
+        view.setCount(model.Count())
 
     }
 

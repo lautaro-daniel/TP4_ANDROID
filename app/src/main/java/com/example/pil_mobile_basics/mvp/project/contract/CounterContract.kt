@@ -2,7 +2,7 @@ package com.example.pil_mobile_basics.mvp.project.contract
 
 class CounterContract {
     interface Model{
-        fun getCount():String
+        fun Count():String
         fun increaseCount(value:Int)
         fun decrementCount(value:Int)
         fun resetCount()

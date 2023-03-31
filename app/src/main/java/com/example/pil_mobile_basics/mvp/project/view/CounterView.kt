@@ -40,4 +40,8 @@ class CounterView(activity: Activity): ActivityView(activity), CounterContract.V
         Toast.makeText(activity, activity?.resources?.getString(R.string.empty_error), Toast.LENGTH_SHORT).show()
     }
 
+    override fun buttonAlreadyReset() {
+        Toast.makeText(activity, activity?.resources?.getString(R.string.button_reset), Toast.LENGTH_SHORT).show()
+    }
+
 }

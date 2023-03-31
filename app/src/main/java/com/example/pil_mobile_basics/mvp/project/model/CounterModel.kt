@@ -7,7 +7,7 @@ class CounterModel():CounterContract.Model {
 
     private var count = ZERO
 
-    override fun Count(): String {
+    override fun count(): String {
         return count.toString()
     }
 

@@ -7,4 +7,5 @@
     <string name="increase_button">INCREASE</string>
     <string name="type_number">Type a number</string>
     <string name="empty_error">It must not be empty</string>
+    <string name="button_reset">Count it`s already on zero</string>
 </resources>

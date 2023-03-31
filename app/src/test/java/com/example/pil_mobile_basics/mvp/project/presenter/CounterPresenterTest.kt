@@ -55,12 +55,20 @@ class CounterPresenterTest {
         verify { counterView.getInput() }
     }
 
-    //Reset button
+    //true branch reset button
     @Test
-    fun `If I enter to reset button the count should be zero`(){
-        val resetValue = "0"
-        every { counterView.onResetButtonPressed { counterView.setCount(resetValue) } } returns counterView.setCount(resetValue)
+    fun `If I enter to reset button when the count is already zero should show an message`(){
+        every { counterView.onResetButtonPressed { "0" } }
         counterPresenter.onResetButtonPressed()
-        verify { counterView.setCount(resetValue) }
+        verify { counterView.buttonAlreadyReset() }
+    }
+
+    //false branch reset button
+    @Test
+    //fix this test
+    fun `If I enter to reset button should to reset count `(){
+        every { counterView.onResetButtonPressed { "0" } }
+        counterPresenter.onResetButtonPressed()
+        verify { counterView.setCount("0") }
     }
 }

@@ -22,4 +22,9 @@ class CounterModel():CounterContract.Model {
     override fun resetCount() {
         count = ZERO
     }
+
+    override fun validateCountOnZero(): Boolean {
+        return count.toString() == "0"
+    }
+
 }

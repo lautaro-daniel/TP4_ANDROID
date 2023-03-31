@@ -1,11 +1,9 @@
 package com.example.pil_mobile_basics.mvp.project.presenter
 
 import com.example.pil_mobile_basics.mvp.project.contract.CounterContract
-import com.example.pil_mobile_basics.mvp.project.model.Constant.ZERO
 
 class CounterPresenter(private val model : CounterContract.Model, private val view : CounterContract.View) : CounterContract.Presenter {
 
-    private var count = ZERO
     init {
         view.onIncreaseButtonPressed{ onIncreaseButtonPressed() }
         view.onDecrementButtonPressed{ onDecrementButtonPressed() }
@@ -32,8 +30,8 @@ class CounterPresenter(private val model : CounterContract.Model, private val vi
     }
 
     override fun onResetButtonPressed(){
-        if (model.count() == count.toString()){
-            view.buttonAlreadyReset()
+        if (model.validateCountOnZero()){
+            view.showCountAlreadyReset()
         }else {
             model.resetCount()
             view.setCount(model.count())

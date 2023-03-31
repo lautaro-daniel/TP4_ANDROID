@@ -5,6 +5,8 @@ import android.widget.Toast
 import com.example.pil_mobile_basics.R
 import com.example.pil_mobile_basics.databinding.ActivityMainBinding
 import com.example.pil_mobile_basics.mvp.project.contract.CounterContract
+import com.example.pil_mobile_basics.mvp.project.model.Constant.ZERO
+import com.example.pil_mobile_basics.mvp.project.model.CounterModel
 
 class CounterView(activity: Activity): ActivityView(activity), CounterContract.View {
 
@@ -40,7 +42,7 @@ class CounterView(activity: Activity): ActivityView(activity), CounterContract.V
         Toast.makeText(activity, activity?.resources?.getString(R.string.empty_error), Toast.LENGTH_SHORT).show()
     }
 
-    override fun buttonAlreadyReset() {
+    override fun showCountAlreadyReset() {
         Toast.makeText(activity, activity?.resources?.getString(R.string.button_reset), Toast.LENGTH_SHORT).show()
     }
 

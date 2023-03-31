@@ -1,6 +1,7 @@
 package com.example.pil_mobile_basics.mvp.project.presenter
 
 import com.example.pil_mobile_basics.mvp.project.contract.CounterContract
+import com.example.pil_mobile_basics.mvp.project.model.Constant.ZERO
 import com.example.pil_mobile_basics.mvp.project.model.CounterModel
 import io.mockk.MockKAnnotations
 import io.mockk.every
@@ -15,8 +16,9 @@ class CounterPresenterTest {
     @MockK
     private lateinit var counterView: CounterContract.View
 
-    private var counterModel = CounterModel()
+   private var counterModel = CounterModel()
 
+    private val zero = ZERO
     @Before
     fun onBefore(){
         MockKAnnotations.init(this, relaxed = true)
@@ -58,17 +60,17 @@ class CounterPresenterTest {
     //true branch reset button
     @Test
     fun `If I enter to reset button when the count is already zero should show an message`(){
-        every { counterView.onResetButtonPressed { "0" } }
+        every { counterView.getInput() } returns 0
         counterPresenter.onResetButtonPressed()
-        verify { counterView.buttonAlreadyReset() }
+        verify { counterView.showCountAlreadyReset() }
     }
 
     //false branch reset button
     @Test
     //fix this test
     fun `If I enter to reset button should to reset count `(){
-        every { counterView.onResetButtonPressed { "0" } }
+        every { counterView.getInput() } returns 1
         counterPresenter.onResetButtonPressed()
-        verify { counterView.setCount("0") }
+        verify { counterView.showCountAlreadyReset()}
     }
 }

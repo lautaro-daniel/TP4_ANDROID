@@ -69,7 +69,6 @@ class CounterPresenterTest {
 
     //false branch reset button
     @Test
-    //fix this test
     fun `If I enter to reset button should to reset count `(){
         every { counterView.validateCountOnZero() } returns false
         counterPresenter.onResetButtonPressed()

@@ -6,12 +6,12 @@ import com.example.pil_mobile_basics.R
 import com.example.pil_mobile_basics.databinding.ActivityMainBinding
 import com.example.pil_mobile_basics.mvp.project.contract.CounterContract
 import com.example.pil_mobile_basics.mvp.project.model.Constant.ZERO
-import com.example.pil_mobile_basics.mvp.project.model.CounterModel
 
 class CounterView(activity: Activity): ActivityView(activity), CounterContract.View {
 
     private var binding : ActivityMainBinding = ActivityMainBinding.inflate(activity.layoutInflater)
 
+    private val zero = ZERO
     init {
         activity.setContentView(binding.root)
     }
@@ -45,5 +45,10 @@ class CounterView(activity: Activity): ActivityView(activity), CounterContract.V
     override fun showCountAlreadyReset() {
         Toast.makeText(activity, activity?.resources?.getString(R.string.button_reset), Toast.LENGTH_SHORT).show()
     }
+
+    override fun validateCountOnZero():Boolean {
+        return binding.counterValue.text.toString() == zero.toString()
+    }
+
 
 }

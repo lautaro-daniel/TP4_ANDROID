@@ -30,7 +30,7 @@ class CounterPresenter(private val model : CounterContract.Model, private val vi
     }
 
     override fun onResetButtonPressed(){
-        if (model.validateCountOnZero()){
+        if (view.validateCountOnZero()){
             view.showCountAlreadyReset()
         }else {
             model.resetCount()

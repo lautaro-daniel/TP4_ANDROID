@@ -6,7 +6,6 @@ class CounterContract {
         fun increaseCount(value:Int)
         fun decrementCount(value:Int)
         fun resetCount()
-        fun validateCountOnZero():Boolean
     }
 
     interface View{
@@ -18,6 +17,8 @@ class CounterContract {
         fun validateInput():Boolean
         fun showError()
         fun showCountAlreadyReset()
+
+        fun validateCountOnZero():Boolean
     }
 
     interface Presenter{

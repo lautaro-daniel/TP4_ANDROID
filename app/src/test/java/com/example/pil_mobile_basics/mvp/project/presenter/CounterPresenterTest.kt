@@ -16,9 +16,11 @@ class CounterPresenterTest {
     @MockK
     private lateinit var counterView: CounterContract.View
 
-   private var counterModel = CounterModel()
+    private var counterModel = CounterModel()
 
     private val zero = ZERO
+
+    //TESTS
     @Before
     fun onBefore(){
         MockKAnnotations.init(this, relaxed = true)
@@ -60,7 +62,7 @@ class CounterPresenterTest {
     //true branch reset button
     @Test
     fun `If I enter to reset button when the count is already zero should show an message`(){
-        every { counterView.getInput() } returns 0
+        every { counterView.validateCountOnZero() } returns true
         counterPresenter.onResetButtonPressed()
         verify { counterView.showCountAlreadyReset() }
     }
@@ -69,8 +71,8 @@ class CounterPresenterTest {
     @Test
     //fix this test
     fun `If I enter to reset button should to reset count `(){
-        every { counterView.getInput() } returns 1
+        every { counterView.validateCountOnZero() } returns false
         counterPresenter.onResetButtonPressed()
-        verify { counterView.showCountAlreadyReset()}
+        verify { counterView.setCount(zero.toString())}
     }
 }

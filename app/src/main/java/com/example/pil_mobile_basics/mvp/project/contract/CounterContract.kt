@@ -17,7 +17,6 @@ class CounterContract {
         fun validateInput():Boolean
         fun showError()
         fun showCountAlreadyReset()
-
         fun validateCountOnZero():Boolean
     }
 
